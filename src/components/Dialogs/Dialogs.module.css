@@ -15,6 +15,9 @@
     padding: 10px;
 }
 
-.message {
+.messages.message {
 
+}
+.dialog{
+    color: white
 }
