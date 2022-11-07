@@ -3,18 +3,10 @@ import s from './Dialogs.module.css'
 
 import DialogItem from './DialogItem/DialogsItem';
 import Message from './Message/Message';
-import {ArrayDialogsType2, ArrayMessagesType2} from '../../App';
+import {DialogsAndMesType} from '../../redux/state';
 
-type DialogsAndMesType ={
-
-        dialogs: Array<ArrayDialogsType2>
-        messages: Array<ArrayMessagesType2>
-
-}
 
 const Dialogs = (props: DialogsAndMesType) => {
-
-
 
     let dialogsElements = props.dialogs.map(dialog => {
         return (

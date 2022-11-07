@@ -1,14 +1,10 @@
 import React from 'react';
 import s from './MyPosts.module.css'
 import Post from './Post/Post';
-import {ArrayPostsType2} from '../../../App';
+import {PostsType} from '../../../redux/state';
 
-type PostsType ={
-    posts: Array<ArrayPostsType2>
 
-}
-
-const MyPosts = (props: PostsType  ) => {
+const MyPosts = (props: PostsType) => {
 
 
     let postsElements = props.posts.map(post => {
@@ -17,7 +13,7 @@ const MyPosts = (props: PostsType  ) => {
         )
     })
 
-    return(
+    return (
         <div className={s.postsBlock}>
             <h3>My posts</h3>
             <div>
