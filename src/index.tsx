@@ -26,12 +26,12 @@ let messages = [
     {id: 4, message: 'and u'},
     {id: 5, message: 'Bye'},
 ]
-let all= { messages, dialogs}
+
 
 
 ReactDOM.render(
 
-    <App posts={posts}  all={all}/>,
+    <App posts={posts}  messages={messages} dialogs={dialogs}/>,
   document.getElementById('root')
 
 );

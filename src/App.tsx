@@ -9,33 +9,33 @@ import News from './components/News/News';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
 
-export type DataPropsType ={
+export type DataPropsType = {
     posts: Array<ArrayPostsType2>
-    all: {
-        dialogs: Array<ArrayDialogsType2>
-        messages: Array<ArrayMessagesType2>
-    }
+    dialogs: Array<ArrayDialogsType2>
+    messages: Array<ArrayMessagesType2>
+
 }
 
-export type ArrayPostsType2 ={
-    id:number,
+export type ArrayPostsType2 = {
+    id: number,
     message: string,
     likesCount: number
 }
 
-export type ArrayDialogsType2 ={
-     id: number,
+export type ArrayDialogsType2 = {
+    id: number,
     name: string
 }
 
 
- export type ArrayMessagesType2 ={
-     id: number,
-     message: string
- }
+export type ArrayMessagesType2 = {
+    id: number,
+    message: string
+}
+
 function App(props: DataPropsType) {
 
-    let dialogsComponent = () => <Dialogs  all={props.all} />
+    let dialogsComponent = () => <Dialogs dialogs={props.dialogs} messages={props.messages}/>
 
 
     return (
@@ -47,8 +47,8 @@ function App(props: DataPropsType) {
                     {/*<Route path="/dialogs" component={Dialogs}/>*/}
                     {/*<Route path="/profile" component={Profile}/>*/}
 
-                    <Route path="/dialogs" render={dialogsComponent} />
-                    <Route path="/profile" render={()=> <Profile posts={props.posts} />} />
+                    <Route path="/dialogs" render={dialogsComponent}/>
+                    <Route path="/profile" render={() => <Profile posts={props.posts}/>}/>
 
                     <Route path="/news" component={News}/>
                     <Route path="/music" component={Music}/>

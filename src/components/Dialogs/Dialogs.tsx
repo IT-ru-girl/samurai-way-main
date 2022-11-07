@@ -1,28 +1,28 @@
 import React from 'react';
 import s from './Dialogs.module.css'
-import {NavLink} from 'react-router-dom';
+
 import DialogItem from './DialogItem/DialogsItem';
 import Message from './Message/Message';
 import {ArrayDialogsType2, ArrayMessagesType2} from '../../App';
 
 type DialogsAndMesType ={
-    all: {
+
         dialogs: Array<ArrayDialogsType2>
         messages: Array<ArrayMessagesType2>
-    }
+
 }
 
 const Dialogs = (props: DialogsAndMesType) => {
 
 
 
-    let dialogsElements = props.all.dialogs.map(dialog => {
+    let dialogsElements = props.dialogs.map(dialog => {
         return (
             <DialogItem name={dialog.name} id={dialog.id}/>
         )
     })
 
-    let messagesElements = props.all.messages.map(message => {
+    let messagesElements = props.messages.map(message => {
         return (
             <Message message={message.message}/>
         )
